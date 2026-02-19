@@ -1,0 +1,16 @@
+# Test fixture for config parsing tests
+global:
+  debounce: 100ms
+  ignore:
+    - .git
+    - "*.tmp"
+
+rules:
+  - name: "Test rule"
+    watch:
+      - "**/*.go"
+    events: [create, modify]
+    action:
+      type: command
+      command: "echo changed {{.Path}}"
+      dir: "."

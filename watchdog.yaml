@@ -1,0 +1,38 @@
+# watchdog.yaml — Example configuration
+# See README.md for full configuration reference
+
+global:
+  debounce: 500ms
+  ignore:
+    - .git
+    - node_modules
+    - "*.tmp"
+    - "**/*.swp"
+
+rules:
+  - name: "Go rebuild"
+    watch:
+      - "**/*.go"
+    events: [create, modify]
+    action:
+      type: command
+      command: "go build ./..."
+      dir: "."
+
+  - name: "CSS reload"
+    watch:
+      - "assets/**/*.css"
+    events: [modify]
+    debounce: 1s
+    action:
+      type: webhook
+      url: "http://localhost:3000/reload"
+      method: POST
+
+  - name: "Log all changes"
+    watch:
+      - "**/*"
+    events: [create, modify, delete, rename]
+    action:
+      type: log
+      format: "[{{.Time}}] {{.Event}} {{.Path}}"
