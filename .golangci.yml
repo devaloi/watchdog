@@ -1,0 +1,34 @@
+version: "2"
+
+linters:
+  default: all
+  disable:
+    - exhaustruct
+    - wrapcheck
+    - depguard
+    - ireturn
+    - testpackage
+    - paralleltest
+    - godox
+    - err113
+    - varnamelen
+    - nlreturn
+    - wsl
+    - nonamedreturns
+    - funlen
+    - lll
+    - cyclop
+    - gocognit
+    - nestif
+    - maintidx
+    - mnd
+    - godot
+    - tagliatelle
+    - musttag
+    - recvcheck
+    - inamedparam
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
