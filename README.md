@@ -1,5 +1,7 @@
 # watchdog
 
+[![CI](https://github.com/devaloi/watchdog/actions/workflows/ci.yml/badge.svg)](https://github.com/devaloi/watchdog/actions/workflows/ci.yml)
+
 A configurable file system watcher that triggers actions on file changes — supports glob patterns, debouncing, command execution, webhooks, and YAML-based rule configuration.
 
 [![Go](https://img.shields.io/badge/Go-1.26-00ADD8?logo=go)](https://go.dev)
